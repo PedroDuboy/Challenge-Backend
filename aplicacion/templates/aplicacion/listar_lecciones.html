@@ -1,0 +1,15 @@
+{% extends 'aplicacion/home.html' %}
+{% load static %}
+
+
+{% block contenido %}
+<body>
+    <h1>Lecciones de Joe</h1>
+    <br><br>
+    <ul>
+        {% for inscripcion in lecciones_joe %}
+            <li>{{ inscripcion.curso.nombre }} - {{ inscripcion.leccion.titulo }}</li><p>{{ inscripcion.fecha_inscripcion }}</p>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock contenido %}

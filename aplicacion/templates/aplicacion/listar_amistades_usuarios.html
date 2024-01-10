@@ -1,0 +1,15 @@
+{% extends 'aplicacion/home.html' %}
+{% load static %}
+
+
+{% block contenido %}
+<body>
+    <h1>Lista de Usuarios con Amistades</h1>
+    <br><br>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.nombre }} {{ usuario.apellido }} - Amistades: {{ usuario.num_amistades }}</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock contenido %}

@@ -1,0 +1,13 @@
+{% extends 'aplicacion/home.html' %}
+{% load static %}
+
+{% block contenido %}
+<body>
+    <h1>Informacion del clima</h1>
+<br><br>
+    <p>Zona Horaria: {{ data.timezone }}</p>
+    <p>Temperatura: {{ data.current.temperature_2m }}°C</p>
+    <p>Humedad Relativa: {{ data.current.relative_humidity_2m }}%</p>
+    <p>¿Es de día?: {% if data.current.is_day %}Sí{% else %}No{% endif %}</p>
+</body>
+{% endblock contenido %}

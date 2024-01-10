@@ -1,0 +1,15 @@
+{% extends 'aplicacion/home.html' %}
+{% load static %}
+
+
+{% block contenido %}
+<body>
+    <h1>Lista de Usuarios</h1>
+    <br><br>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.nombre }} {{ usuario.apellido }}</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock contenido %}

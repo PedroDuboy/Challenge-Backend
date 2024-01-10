@@ -1,0 +1,21 @@
+{% extends 'aplicacion/home.html' %}
+{% load static %}
+
+{% block contenido %}
+<body>
+    <h1>Lecciones de Amigos de Joe</h1>
+    <br><br>
+    <h2>Amigos - Cursos </h2>
+    <ul>
+        {% for amigo, detalles_amigo in cursos_amigos.items %}
+        <br><br>
+            <li>{{ amigo.nombre }} {{ amigo.apellido }} - Cantidad total de cursos: {{ detalles_amigo.total_cursos }}</li>
+            <ul>
+                {% for curso, cantidad in detalles_amigo.cursos.items %}
+                    <li>{{ curso }} - Cantidad de inscripciones: {{ cantidad }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock contenido %}
